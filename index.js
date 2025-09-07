@@ -5,7 +5,7 @@ const cors = require("cors")
 const username = "user";
 const password = "1234";
 
-app.use(cors())
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -15,11 +15,11 @@ app.get("/login",function(req,res)
     console.log("QUERY:", req.query);
     if(req.query.username === username && req.query.password === password)
     {
-        res.send(true)
+        res.json(true)
 
     }
     else{
-        res.send(false)
+        res.json(false)
     }
 })
 
