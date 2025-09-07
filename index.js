@@ -15,11 +15,11 @@ app.get("/login",function(req,res)
     console.log("QUERY:", req.query);
     if(req.query.username === username && req.query.password === password)
     {
-        res.json(true)
+        res.send(true)
 
     }
     else{
-        res.json(false)
+        res.send(false)
     }
 })
 
