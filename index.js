@@ -10,10 +10,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.post("/login",function(req,res)
+app.get("/login",function(req,res)
 {
-    console.log("BODY:", req.body);
-    if(req.body.username === username && req.body.password === password)
+    console.log("BODY:", req.query);
+    if(req.query.username === username && req.query.password === password)
     {
         res.json(true)
 
